@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.text.input.rememberTextFieldState
+import androidx.compose.foundation.text.input.setTextAndPlaceCursorAtEnd
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
@@ -52,11 +53,12 @@ fun LoginCard(viewModel: AppViewModel) = Card {
         modifier = Modifier.padding(16.dp)
     ) {
         val server = rememberTextFieldState("")
-        val username =  rememberTextFieldState("")
-        val password =  rememberTextFieldState("")
+        val username = rememberTextFieldState("")
+        val password = rememberTextFieldState("")
 
         OutlinedTextField(
             state = server,
+            placeholder = { Text("https://example.com/") },
             label = { Text("Server") }
         )
         OutlinedTextField(
@@ -68,7 +70,7 @@ fun LoginCard(viewModel: AppViewModel) = Card {
             label = { Text("Password") },
         )
         Button(onClick = {
-            viewModel.connect(server.text.toString(), username.text.toString(), password.text.toString(), coroutineScope)
+            server.setTextAndPlaceCursorAtEnd(viewModel.connect(server.text.toString(), username.text.toString(), password.text.toString(), coroutineScope))
         }) {
             Text("Login")
         }
