@@ -51,9 +51,9 @@ fun LoginCard(viewModel: AppViewModel) = Card {
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier.padding(16.dp)
     ) {
-        val server = rememberTextFieldState("https://st.ewoudje.com/")
-        val username =  rememberTextFieldState("ewoudje")
-        val password =  rememberTextFieldState("}Fw@k_gc&&7a:JP")
+        val server = rememberTextFieldState("")
+        val username =  rememberTextFieldState("")
+        val password =  rememberTextFieldState("")
 
         OutlinedTextField(
             state = server,
