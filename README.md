@@ -2,6 +2,8 @@
 A simple application to view and inspect a JMAP server.\
 It currently only shows all accounts and capabilities and their associated configuration.
 
+This client is in its really early days, so use it with that in mind.
+
 ### Build and Run Desktop (JVM) Application
 
 To build and run the development version of the desktop app, use the run configuration from the run widget
